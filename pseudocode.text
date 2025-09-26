@@ -1,0 +1,73 @@
+/* 
+CONSTANT OPTIONS = ["rock", "paper", "scissors"]
+
+FUNCTION getComputerChoice
+    SET n = floor(Math.random() * 3)        // 0..2
+    RETURN OPTIONS[n]
+END FUNCTION
+
+FUNCTION getHumanChoice
+    LOOP
+        PROMPT "Choose Rock, Paper, or Scissors"
+        SET input = user's response
+        SET choice = toLowerCase(trim(input))
+        IF choice IN OPTIONS
+            RETURN choice
+        ELSE
+            DISPLAY "Invalid choice. Please enter Rock, Paper, or Scissors."
+    END LOOP
+END FUNCTION
+
+FUNCTION determineWinner(humanChoice, computerChoice)
+    IF humanChoice == computerChoice
+        RETURN "tie"
+    ELSE IF (humanChoice == "rock" AND computerChoice == "scissors")
+         OR (humanChoice == "paper" AND computerChoice == "rock")
+         OR (humanChoice == "scissors" AND computerChoice == "paper")
+        RETURN "human"
+    ELSE
+        RETURN "computer"
+END FUNCTION
+
+FUNCTION playRound
+    SET humanChoice = getHumanChoice()
+    SET computerChoice = getComputerChoice()
+
+    SET outcome = determineWinner(humanChoice, computerChoice)
+
+    IF outcome == "human"
+        humanScore = humanScore + 1
+        DISPLAY "You win this round."
+    ELSE IF outcome == "computer"
+        computerScore = computerScore + 1
+        DISPLAY "Computer wins this round."
+    ELSE
+        DISPLAY "This round is a tie."
+
+    DISPLAY "You: " + humanChoice + " | Computer: " + computerChoice
+    DISPLAY "Score — You: " + humanScore + " | Computer: " + computerScore
+END FUNCTION
+
+// ---- Game orchestration ----
+
+SET humanScore = 0
+SET computerScore = 0
+SET WIN_TARGET = 3   // play best of 5 (first to 3)
+
+FUNCTION playGame
+    DISPLAY "First to " + WIN_TARGET + " wins."
+    WHILE humanScore < WIN_TARGET AND computerScore < WIN_TARGET
+        CALL playRound()
+    END WHILE
+
+    IF humanScore > computerScore
+        DISPLAY "🎉 You won the game!"
+    ELSE
+        DISPLAY "🤖 Computer won the game."
+    END IF
+
+    DISPLAY "Final Score — You: " + humanScore + " | Computer: " + computerScore
+END FUNCTION
+
+CALL playGame()
+*/
