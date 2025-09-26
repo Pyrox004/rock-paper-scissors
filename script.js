@@ -75,4 +75,4 @@ function playGame() {
     console.log("Final Score — You: " + humanScore + " | Computer: " + computerScore)
 }
 
-
+playGame()
