@@ -26,9 +26,30 @@ function determineWinner(humanChoice, computerChoice) {
         (humanChoice == options[1] && computerChoice == options[0]) ||
         (humanChoice == options[2] && computerChoice == options[1])
     )
-        return "You win!"
+        return "human"
 
     else 
-        return "Computer Wins"
+        return "computer"
     
+}
+
+function playRound() {
+    let humanChoice = getHumanChoice()
+    let computerChoice = getComputerChoice()
+
+    let outcome = determineWinner(humanChoice, computerChoice)
+
+    if (outcome == "human") {
+        humanScore = humanScore + 1
+        return "You win this round!"
+    }
+
+    else if (outcome == "computer") {
+        computerScore = computerScore + 1
+        return "Computer wins this round"
+    }
+
+    else
+        return "this round is a tie."
+
 }
