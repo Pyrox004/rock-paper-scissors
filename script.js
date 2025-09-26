@@ -53,3 +53,26 @@ function playRound() {
         return "this round is a tie."
 
 }
+
+let humanScore = 0
+let computerScore = 0
+const WIN_TARGET = 3
+
+function playGame() {
+    console.log("First to " + WIN_TARGET + " wins!")
+    while (humanScore < WIN_TARGET && computerScore < WIN_TARGET) {
+        playRound()
+        }
+
+    if (humanScore > computerScore){ 
+        console.log("🎉 You won the game!")
+    }
+
+    else{
+        console.log("🤖 Computer won the game.")
+    }
+
+    console.log("Final Score — You: " + humanScore + " | Computer: " + computerScore)
+}
+
+
