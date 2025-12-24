@@ -77,18 +77,8 @@ function playGame() {
 
 playGame()*/
 
-const rock = document.querySelector(".rock")
-const paper = document.querySelector(".paper")
-const scissors = document.querySelector("scissors")
+const container = document.querySelector(".container")
 
-rock.addEventListener("click", (e) => {
-    playRound(e)
-})
-
-paper.addEventListener("click", (e) => {
-    playRound(e)
-})
-
-scissors.addEventListener("click", (e) => {
+container.addEventListener("click", (e) => {
     playRound(e)
 })
