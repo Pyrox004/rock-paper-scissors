@@ -56,7 +56,7 @@ function playRound() {
 
 let humanScore = 0
 let computerScore = 0
-const WIN_TARGET = 3
+/*const WIN_TARGET = 3
 
 function playGame() {
     console.log("First to " + WIN_TARGET + " wins!")
@@ -75,4 +75,6 @@ function playGame() {
     console.log("Final Score — You: " + humanScore + " | Computer: " + computerScore)
 }
 
-playGame()
+playGame()*/
+
+
