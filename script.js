@@ -33,8 +33,8 @@ function determineWinner(humanChoice, computerChoice) {
     
 }
 
-function playRound() {
-    let humanChoice = getHumanChoice()
+function playRound(e) {
+    let humanChoice = e.target.textContent
     let computerChoice = getComputerChoice()
 
     let outcome = determineWinner(humanChoice, computerChoice)
@@ -80,3 +80,15 @@ playGame()*/
 const rock = document.querySelector(".rock")
 const paper = document.querySelector(".paper")
 const scissors = document.querySelector("scissors")
+
+rock.addEventListener("click", (e) => {
+    playRound(e)
+})
+
+paper.addEventListener("click", (e) => {
+    playRound(e)
+})
+
+scissors.addEventListener("click", (e) => {
+    playRound(e)
+})
