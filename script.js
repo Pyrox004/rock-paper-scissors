@@ -5,18 +5,7 @@ function getComputerChoice() {
     return options[n]
 }
 
-function getHumanChoice() {
-    let choice
-    do {
-        let input = prompt("Choose Rock, Paper, or Scissors")
-        choice = input.toLowerCase().trim()
-        if (options.includes(choice))
-            return choice
-        else
-            console.log("Invalid choice. Please enter Rock, Paper, or Scissors.")
-    }
-    while (!options.includes(choice))
-}
+
 
 function determineWinner(humanChoice, computerChoice) {
     if (humanChoice == computerChoice)
@@ -54,31 +43,7 @@ function playRound(e) {
 
 }
 
-let humanScore = 0
-let computerScore = 0
-/*const WIN_TARGET = 3
 
-function playGame() {
-    console.log("First to " + WIN_TARGET + " wins!")
-    while (humanScore < WIN_TARGET && computerScore < WIN_TARGET) {
-        playRound()
-        }
 
-    if (humanScore > computerScore){ 
-        console.log("🎉 You won the game!")
-    }
 
-    else{
-        console.log("🤖 Computer won the game.")
-    }
 
-    console.log("Final Score — You: " + humanScore + " | Computer: " + computerScore)
-}
-
-playGame()*/
-
-const container = document.querySelector(".container")
-
-container.addEventListener("click", (e) => {
-    playRound(e)
-})
