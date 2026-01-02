@@ -1,4 +1,6 @@
 const options = ["rock", "paper", "scissors"]
+let computerScore = 0
+let playerScore = 0
 
 function getComputerChoice() {
     let n = Math.floor(Math.random() * 3)
@@ -42,8 +44,4 @@ function playRound(e) {
         return "this round is a tie."
 
 }
-
-
-
-
 
