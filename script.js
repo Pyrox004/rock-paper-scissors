@@ -36,7 +36,7 @@ function playRound(e) {
     }
 
     else if (outcome == "computer") {
-        computerScore = computerScore + 1
+        computerScore ++
         return "Computer wins this round"
     }
 
