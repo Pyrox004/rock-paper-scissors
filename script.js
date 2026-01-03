@@ -7,6 +7,18 @@ function getComputerChoice() {
     return options[n]
 }
 
+function getHumanChoice(e) {
+    if (e.target.id == "rock") {
+        return options[0]
+    } else if (e.target.id == "paper") {
+        return options[1]
+    } else if (e.target.id == "scissors") {
+        return options[2]
+    } else {
+        return undefined
+    }
+}
+
 
 
 function determineWinner(humanChoice, computerChoice) {
