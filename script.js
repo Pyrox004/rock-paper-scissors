@@ -50,7 +50,7 @@ function winCondition() {
     } else undefined
 }
 
-function playRound() {
+function playRound(outcome) {
     if (outcome == "human") {
         playerScore ++
         playerScoreDisplay.textContent = `${playerScore}`
@@ -73,6 +73,7 @@ const buttonContainer = document.querySelector(".buttons-container")
 buttonContainer.addEventListener("click", (e) => {
     if (playerScore >= 5 || computerScore >= 5){
         update.textContent = "Game over. Press reset"
+        return
     }
 
     let humanChoice = getHumanChoice(e)
@@ -91,5 +92,9 @@ const resetButton = document.querySelector(".reset")
 resetButton.addEventListener("click", (e) => {
     playerScore = 0
     computerScore = 0
+
+    playerScoreDisplay.textContent = `${playerScore}`
+    computerScoreDisplay.textContent = `${computerScore}`
+
     update.textContent = "Game has restarted, BEGIN!"
 })
