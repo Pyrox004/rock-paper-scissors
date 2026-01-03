@@ -3,6 +3,7 @@ let computerScore = 0
 let playerScore = 0
 let playerScoreDisplay = document.querySelector(".player-score")
 let computerScoreDisplay = document.querySelector(".computer-score")
+let update = document.querySelector(".update")
 
 playerScoreDisplay.textContent = `${playerScore}`
 computerScoreDisplay.textContent = `${computerScore}`
