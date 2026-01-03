@@ -13,9 +13,9 @@ function determineWinner(humanChoice, computerChoice) {
     if (humanChoice == computerChoice)
         return "it's a tie"
     else if (
-        (humanChoice == options[0] && computerChoice == options[2]) ||
-        (humanChoice == options[1] && computerChoice == options[0]) ||
-        (humanChoice == options[2] && computerChoice == options[1])
+        (humanChoice == "rock" && computerChoice == options[2]) ||
+        (humanChoice == "paper" && computerChoice == options[0]) ||
+        (humanChoice == "scissors" && computerChoice == options[1])
     )
         return "human"
 
@@ -25,23 +25,23 @@ function determineWinner(humanChoice, computerChoice) {
 }
 
 function playRound(e) {
-    let humanChoice = e.target.textContent
+    let humanChoice = e.target.textContent.toLowerCase()
     let computerChoice = getComputerChoice()
 
     let outcome = determineWinner(humanChoice, computerChoice)
 
     if (outcome == "human") {
         humanScore = humanScore + 1
-        return "You win this round!"
+        return alert("You win this round!")
     }
 
     else if (outcome == "computer") {
         computerScore ++
-        return "Computer wins this round"
+        return alert("Computer wins this round")
     }
 
     else
-        return "this round is a tie."
+        return alert("this round is a tie.")
 
 }
 
