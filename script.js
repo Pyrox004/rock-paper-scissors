@@ -1,8 +1,11 @@
 const options = ["rock", "paper", "scissors"]
 let computerScore = 0
 let playerScore = 0
-let playerScoreDisplay = document.querySelector("player-score")
-let computerScoreDisplay = document.querySelector("computer-score")
+let playerScoreDisplay = document.querySelector(".player-score")
+let computerScoreDisplay = document.querySelector(".computer-score")
+
+playerScoreDisplay.textContent = `${playerScore}`
+computerScoreDisplay.textContent = `${computerScore}`
 
 function getComputerChoice() {
     let n = Math.floor(Math.random() * 3)
