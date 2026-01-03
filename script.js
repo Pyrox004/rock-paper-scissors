@@ -1,6 +1,8 @@
 const options = ["rock", "paper", "scissors"]
 let computerScore = 0
 let playerScore = 0
+let playerScoreDisplay = document.querySelector("player-score")
+let computerScoreDisplay = document.querySelector("computer-score")
 
 function getComputerChoice() {
     let n = Math.floor(Math.random() * 3)
@@ -43,7 +45,7 @@ function playRound(e) {
     let outcome = determineWinner(humanChoice, computerChoice)
 
     if (outcome == "human") {
-        humanScore = humanScore + 1
+        humanScore ++
         return alert("You win this round!")
     }
 
