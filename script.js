@@ -42,12 +42,15 @@ function determineWinner(humanChoice, computerChoice) {
     
 }
 
-function playRound(e) {
-    let humanChoice = e.target.textContent.toLowerCase()
-    let computerChoice = getComputerChoice()
+function winCondition() {
+    if (playerScore == 5) {
+        update.textContent = "You have won the game! Press restart if you want to play again."
+    } else if (computerScore == 5) {
+        update.textContent = "You have lost the game! Nice try. Press restart if you want to play again."
+    } else undefined
+}
 
-    let outcome = determineWinner(humanChoice, computerChoice)
-
+function playRound() {
     if (outcome == "human") {
         playerScore ++
         playerScoreDisplay.textContent = `${playerScore}`
@@ -64,4 +67,22 @@ function playRound(e) {
         update.textContent = "This round is a tie!"
 
 }
+
+const buttonContainer = document.querySelector(".buttons-container")
+
+buttonContainer.addEventListener("click", (e) => {
+    if (playerScore >= 5 || computerScore >= 5){
+        update.textContent = "Game over. Press reset"
+    }
+
+    let humanChoice = getHumanChoice(e)
+    if (humanChoice === undefined) return
+
+    let computerChoice = getComputerChoice()
+    let outcome = determineWinner(humanChoice, computerChoice)
+
+    playRound(outcome)
+    
+    winCondition()
+})
 
