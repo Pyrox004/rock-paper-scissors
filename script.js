@@ -49,17 +49,17 @@ function playRound(e) {
     let outcome = determineWinner(humanChoice, computerChoice)
 
     if (outcome == "human") {
-        humanScore ++
-        return alert("You win this round!")
+        playerScore ++
+        update.textContent = "You win this round!"
     }
 
     else if (outcome == "computer") {
         computerScore ++
-        return alert("Computer wins this round")
+        update.textContent = "You lost this round :("
     }
 
     else
-        return alert("this round is a tie.")
+        update.textContent = "This round is a tie!"
 
 }
 
