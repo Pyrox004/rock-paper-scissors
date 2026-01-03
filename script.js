@@ -82,7 +82,14 @@ buttonContainer.addEventListener("click", (e) => {
     let outcome = determineWinner(humanChoice, computerChoice)
 
     playRound(outcome)
-    
+
     winCondition()
 })
 
+const resetButton = document.querySelector(".reset")
+
+resetButton.addEventListener("click", (e) => {
+    playerScore = 0
+    computerScore = 0
+    update.textContent = "Game has restarted, BEGIN!"
+})
