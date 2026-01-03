@@ -54,17 +54,16 @@ function playRound(outcome) {
     if (outcome == "human") {
         playerScore ++
         playerScoreDisplay.textContent = `${playerScore}`
-        update.textContent = "You win this round!"
+        update.textContent = `You picked ${humanChoice} and your opponent picked ${computerChoice}. You win this round!`
     }
 
     else if (outcome == "computer") {
         computerScore ++
         computerScoreDisplay.textContent = `${computerScore}`
-        update.textContent = "You lost this round :("
+        update.textContent = "You lost this round :("`You picked ${humanChoice} and your opponent picked ${computerChoice}. You lose this round :(`
     }
-
     else
-        update.textContent = "This round is a tie!"
+        update.textContent = `You picked ${humanChoice} and your opponent picked ${computerChoice}. This round is a tie.`
 
 }
 
