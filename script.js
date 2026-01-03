@@ -50,11 +50,13 @@ function playRound(e) {
 
     if (outcome == "human") {
         playerScore ++
+        playerScoreDisplay.textContent = `${playerScore}`
         update.textContent = "You win this round!"
     }
 
     else if (outcome == "computer") {
         computerScore ++
+        computerScoreDisplay.textContent = `${computerScore}`
         update.textContent = "You lost this round :("
     }
 
