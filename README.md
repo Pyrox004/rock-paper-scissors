@@ -1,6 +1,7 @@
 Rock Paper Scissors
 
-Simple Rock–Paper–Scissors game in JavaScript for The Odin Project. Runs in the browser console.
+Simple Rock–Paper–Scissors game in JavaScript for The Odin Project. 
+Has interactive UI.
 
 How to Play
 
@@ -15,7 +16,7 @@ playGame()
 
 Enter rock, paper, or scissors when prompted.
 
-First to 3 wins takes the game.
+First to 5 wins takes the game.
 
 Features
 
