@@ -50,7 +50,7 @@ function winCondition() {
     } else undefined
 }
 
-function playRound(outcome) {
+function playRound(outcome, humanChoice, computerChoice) {
     if (outcome == "human") {
         playerScore ++
         playerScoreDisplay.textContent = `${playerScore}`
@@ -60,7 +60,7 @@ function playRound(outcome) {
     else if (outcome == "computer") {
         computerScore ++
         computerScoreDisplay.textContent = `${computerScore}`
-        update.textContent = "You lost this round :("`You picked ${humanChoice} and your opponent picked ${computerChoice}. You lose this round :(`
+        update.textContent = `You picked ${humanChoice} and your opponent picked ${computerChoice}. You lose this round :(`
     }
     else
         update.textContent = `You picked ${humanChoice} and your opponent picked ${computerChoice}. This round is a tie.`
@@ -81,7 +81,7 @@ buttonContainer.addEventListener("click", (e) => {
     let computerChoice = getComputerChoice()
     let outcome = determineWinner(humanChoice, computerChoice)
 
-    playRound(outcome)
+    playRound(outcome, humanChoice, computerChoice)
 
     winCondition()
 })
