@@ -4,7 +4,9 @@ body {
     align-items: center;
     min-height: 100vh;
     margin: 0;
-    background-color: #c10005;
+    background-color: #f40006;
+    color: white;
+    font-weight: 600;
 }
 
 .container {
@@ -17,7 +19,8 @@ body {
     width: 90%;
     max-width: 500px;
     height: 90%;
-    min-height: 400px;
+    min-height: 500px;
+    gap: 40px;
 }
 
 .results {
@@ -25,20 +28,62 @@ body {
     justify-content: space-between;
     width: 300px;
     text-align: center;
-    margin-bottom: 50px;
+    
 }
 
 .result {
     display: flex;
     flex-direction: column;
     align-items: center;
+    font-size: 17px;
+}
+.score {
+    background-color: #000000;
+    border: 1px solid #c10005;
+    border-radius: 100%;
+    width: 50px;
+    height: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .update {
-    margin-bottom: 50px;
+    font-size: 11pt;
 }
 
+
+
 .buttons-container {
-    margin-bottom: 25px;
+    display: flex;
+    justify-content: center;
+    gap: 10px;
 }
+
+button {
+  background-color: white;
+  color: black;
+  border-radius: 10em;
+  font-size: 17px;
+  font-weight: 600;
+  padding: 10px;
+  width: 100px;
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+  border: 1px solid black;
+  box-shadow: 0 0 0 0 black;
+}
+
+button:hover {
+  transform: translateY(-4px) translateX(-2px);
+  box-shadow: 2px 5px 0 0 black;
+};
+
+button:active {
+  transform: translateY(2px) translateX(1px);
+  box-shadow: 0 0 0 0 black;
+};
+
+
+
 
